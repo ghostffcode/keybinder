@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Keybinder</title>
+  </head>
+  <body>
+    <button class="button" type="button" name="button">Click Me!</button>
+    <script src="build/bundle.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      keybinder("button", [], function () {
+        console.log("Got here!");
+      });
+    </script>
+  </body>
+</html>
