@@ -1,6 +1,8 @@
 const path = require('path');
 const config = require('./package.json');
 
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
+
 module.exports = {
   entry: path.resolve(__dirname, config.main),
   devtools: "source_map",
@@ -19,5 +21,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.es6']
-  }
+  },
+  plugins: [
+    new WebpackBrowserPlugin({
+      browser: "Chrome"
+    })
+  ]
 }
