@@ -32,17 +32,19 @@ class kb {
     if (document.addEventListener) {
       tag.addEventListener("keydown", this.cbHandler.bind(this));
       tag.addEventListener("keyup", this.rmkey.bind(this));
-    } else if (document.attachEvent) {
-      tag.attachEvent("onkeydown", this.cbHandler.bind(this));
-      tag.attachEvent("onkeyup", this.rmkey.bind(this));
+      
+      // add event listener for when out of focus
+      tag.addEventListener("blur", ()=> {
+        this.log = {};
+      });
     }
   }
 
   // callback handler function
   cbHandler (e) {
-    let key = e.key;
+    let key = e.key.toLowerCase();
 
-    this.log[key.toLowerCase()] = 1;
+    this.log[key] = 1;
 
     if (JSON.stringify(this.log) == JSON.stringify(this.keys)) {
       e.preventDefault();
