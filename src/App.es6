@@ -1,6 +1,6 @@
 "use strict";
 
-class kb {
+class Keybinder {
   constructor (selector, keys = [], callback, delay = 2000) {
     if (typeof selector !== 'string' || selector === 'undefined' || selector.length < 1) {
       return "selector error";
@@ -11,8 +11,10 @@ class kb {
       return "Callback error";
     }
 
+    this.document = document;
+
     // if everything works out with the selector, continue
-    let tag = document.querySelector(selector);
+    let tag = this.document.querySelector(selector);
 
     // specify callback
     this.callback = callback.bind(tag);
@@ -29,10 +31,10 @@ class kb {
     });
 
     // add event listener to element
-    if (document.addEventListener) {
+    if (this.document.addEventListener) {
       tag.addEventListener("keydown", this.cbHandler.bind(this));
       tag.addEventListener("keyup", this.rmkey.bind(this));
-      
+
       // add event listener for when out of focus
       tag.addEventListener("blur", ()=> {
         this.log = {};
@@ -59,7 +61,10 @@ class kb {
 
 }
 
-
-window.keybinder = function () {
-  return new kb(arguments[0], arguments[1], arguments[2], arguments[3]);
+function keybinder () {
+  return new Keybinder(arguments[0], arguments[1], arguments[2], arguments[3]);
 }
+
+window.keybinder = keybinder;
+
+export default keybinder;
