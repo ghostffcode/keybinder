@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const config = require('./package.json');
 
-const PROD = JSON.parse(process.env.PROD_ENV || '0');
+const PROD = (process.env.NODE_ENV === 'production');
 
 const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
@@ -16,7 +16,7 @@ PROD ? [
 
 module.exports = {
   entry: path.resolve(__dirname, config.main),
-  devtools: "source_map",
+  devtool: "source-map",
   output: {
     path: __dirname,
     filename: PROD ? "build/keybinder.min.js" : "build/keybinder.js"
