@@ -8,9 +8,10 @@
     <input type="text" name="name" class="name" value="">
     <script src="build/keybinder.js" charset="utf-8"></script>
     <script type="text/javascript">
-      keybinder(".name", ['control', 's'], function () {
-        console.log("Got here!");
-      });
+        keybinder('.name', ['control', 's'], function () {
+          this.value = 'I am changed';
+        });
     </script>
+
   </body>
 </html>
