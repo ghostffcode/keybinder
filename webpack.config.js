@@ -15,7 +15,7 @@ PROD ? [
   ] : '';
 
 module.exports = {
-  entry: path.resolve(__dirname, config.main),
+  entry: path.resolve(__dirname, config.entry),
   devtool: "source-map",
   output: {
     path: __dirname,
