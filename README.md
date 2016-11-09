@@ -7,7 +7,7 @@ npm i keybinder --save
 ```
 
 ## To Use
-```
+```javascript
 keybinder(selector, keys, callback);
 ```
 The arguments for the keybinder are:
@@ -18,7 +18,7 @@ The arguments for the keybinder are:
 * __callback (function)__: The callback function to run when the specified key combinations are pressed. This is automatically bound to the element selected.
 
 Sample Code:
-```
+```html
 <input type="text" class="name" />
 <script src="path/to/keybinder.js" charset="utf-8"></script>
 <script type="text/javascript">
