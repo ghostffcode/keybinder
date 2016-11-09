@@ -60,10 +60,8 @@ class Keybinder {
 
 }
 
-function keybinder () {
+let keybinder = function () {
   return new Keybinder(arguments[0], arguments[1], arguments[2]);
 }
-
-window.keybinder = keybinder;
 
 module.exports = keybinder;
