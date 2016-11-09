@@ -66,4 +66,4 @@ function keybinder () {
 
 window.keybinder = keybinder;
 
-export default keybinder;
+module.exports = keybinder;
