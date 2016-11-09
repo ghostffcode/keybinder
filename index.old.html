@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Keybinder</title>
+  </head>
+  <body>
+    <input type="text" name="name" class="name" value="">
+    <script src="build/keybinder.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        keybinder('.name', ['control', 's'], function () {
+          this.value = 'I am changed';
+        });
+    </script>
+
+  </body>
+</html>
