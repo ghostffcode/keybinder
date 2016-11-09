@@ -120,102 +120,8 @@ hr {
     overflow: visible
 }
 
-button,
-input,
-select,
-textarea {
-    font: inherit;
-    margin: 0
-}
-
 optgroup {
     font-weight: 700
-}
-
-button,
-input {
-    overflow: visible
-}
-
-button,
-select {
-    text-transform: none
-}
-
-[type=reset],
-[type=submit],
-button,
-html [type=button] {
-    -webkit-appearance: button
-}
-
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner,
-button::-moz-focus-inner {
-    border-style: none;
-    padding: 0
-}
-
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring,
-button:-moz-focusring {
-    outline: 1px dotted ButtonText
-}
-
-fieldset {
-    border: 1px solid silver;
-    margin: 0 2px;
-    padding: .35em .625em .75em
-}
-
-legend {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    color: inherit;
-    display: table;
-    max-width: 100%;
-    padding: 0;
-    white-space: normal
-}
-
-textarea {
-    overflow: auto
-}
-
-[type=checkbox],
-[type=radio] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-    height: auto
-}
-
-[type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
-}
-
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
-    -webkit-appearance: none
-}
-
-::-webkit-input-placeholder {
-    color: inherit;
-    opacity: .54
-}
-
-::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    font: inherit
 }
 
 html {
@@ -488,11 +394,24 @@ h2 {
   margin: 0 auto;
 }
 
+pre {
+  background: none;
+  border: 0px;
+}
+
 code {
   font-size: 1em;
   font-family: 'Ubuntu Mono', monospace;
-  border-radius: 5px;
+  border-radius: 5px !important;
   padding: 0px;
+}
+
+table {
+  margin: 2em auto;
+}
+
+table th {
+  text-align: center;
 }
 
 h3 {
