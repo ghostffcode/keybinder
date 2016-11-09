@@ -1,6 +1,6 @@
 {
   "name": "keybinder",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Javascript keybinder",
   "main": "build/keybinder.min.js",
   "entry": "src/App.es6",
