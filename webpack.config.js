@@ -19,7 +19,8 @@ module.exports = {
   devtool: "source-map",
   output: {
     path: __dirname,
-    filename: PROD ? "build/keybinder.min.js" : "build/keybinder.js"
+    filename: PROD ? "build/keybinder.min.js" : "build/keybinder.js",
+    libraryTarget: "umd"
   },
   module: {
     loaders: [
