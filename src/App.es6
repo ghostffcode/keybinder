@@ -14,7 +14,7 @@ class Keybinder {
     this.document = document;
 
     // if everything works out with the selector, continue
-    this.tag = this.document.querySelector(selector);
+    this.tag = this.document.querySelectorAll(selector);
 
     // specify callback
     this.callback = callback.bind(this.tag);

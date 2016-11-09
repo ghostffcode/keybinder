@@ -56,12 +56,10 @@
 	
 	var Keybinder = function () {
 	  function Keybinder(selector) {
-	    var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-	
 	    var _this = this;
 	
+	    var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
 	    var callback = arguments[2];
-	    var delay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 2000;
 	
 	    _classCallCheck(this, Keybinder);
 	
@@ -77,12 +75,11 @@
 	    this.document = document;
 	
 	    // if everything works out with the selector, continue
-	    var tag = this.document.querySelector(selector);
+	    this.tag = this.document.querySelectorAll(selector);
 	
 	    // specify callback
-	    this.callback = callback.bind(tag);
+	    this.callback = callback.bind(this.tag);
 	    this.log = {};
-	    this.delay = delay;
 	    this.keys = {};
 	
 	    var x = this.keys;
@@ -95,11 +92,11 @@
 	
 	    // add event listener to element
 	    if (this.document.addEventListener) {
-	      tag.addEventListener("keydown", this.cbHandler.bind(this));
-	      tag.addEventListener("keyup", this.rmkey.bind(this));
+	      this.tag.addEventListener("keydown", this.cbHandler.bind(this));
+	      this.tag.addEventListener("keyup", this.rmkey.bind(this));
 	
 	      // add event listener for when out of focus
-	      tag.addEventListener("blur", function () {
+	      this.tag.addEventListener("blur", function () {
 	        _this.log = {};
 	      });
 	    }
@@ -132,7 +129,7 @@
 	}();
 	
 	function keybinder() {
-	  return new Keybinder(arguments[0], arguments[1], arguments[2], arguments[3]);
+	  return new Keybinder(arguments[0], arguments[1], arguments[2]);
 	}
 	
 	window.keybinder = keybinder;
