@@ -17,7 +17,13 @@ The arguments for the keybinder are:
 
 * __callback (function)__: The callback function to run when the specified key combinations are pressed. This is automatically bound to the element selected.
 
-Sample Code:
+## Implement
+In node, require:
+```javascript
+const keybinder = require("keybinder");
+```
+
+Or in HTML use:
 ```html
 <input type="text" class="name" />
 <script src="path/to/keybinder.js" charset="utf-8"></script>
